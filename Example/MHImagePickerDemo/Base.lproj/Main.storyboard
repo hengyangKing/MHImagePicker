@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M0p-Fn-PMG">
+                                <rect key="frame" x="30" y="127" width="315" height="30"/>
+                                <state key="normal" title="相册"/>
+                                <connections>
+                                    <action selector="pickPhoto:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4Nc-T4-BSb"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X25-Ml-DNm">
+                                <rect key="frame" x="30" y="356" width="315" height="30"/>
+                                <state key="normal" title="视频"/>
+                                <connections>
+                                    <action selector="pickVideo:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MoW-Bx-qd0"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8vZ-Je-YJc">
+                                <rect key="frame" x="30" y="537" width="315" height="30"/>
+                                <state key="normal" title="拍照"/>
+                                <connections>
+                                    <action selector="takePicture:" destination="BYZ-38-t0r" eventType="touchUpInside" id="csD-hp-oRH"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="X25-Ml-DNm" firstAttribute="top" secondItem="M0p-Fn-PMG" secondAttribute="bottom" constant="199" id="0xZ-nm-khu"/>
+                            <constraint firstItem="M0p-Fn-PMG" firstAttribute="leading" secondItem="X25-Ml-DNm" secondAttribute="leading" id="GY7-yd-lQ4"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="8vZ-Je-YJc" secondAttribute="trailing" constant="14" id="GuF-fi-z2i"/>
+                            <constraint firstItem="8vZ-Je-YJc" firstAttribute="top" secondItem="X25-Ml-DNm" secondAttribute="bottom" constant="151" id="VTe-hs-2PT"/>
+                            <constraint firstItem="X25-Ml-DNm" firstAttribute="trailing" secondItem="8vZ-Je-YJc" secondAttribute="trailing" id="ZlR-H5-IKe"/>
+                            <constraint firstItem="8vZ-Je-YJc" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="14" id="a0L-EH-LFF"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="8vZ-Je-YJc" secondAttribute="bottom" constant="100" id="xyv-Q9-ubL"/>
+                            <constraint firstItem="M0p-Fn-PMG" firstAttribute="trailing" secondItem="X25-Ml-DNm" secondAttribute="trailing" id="yRG-3f-DjX"/>
+                            <constraint firstItem="X25-Ml-DNm" firstAttribute="leading" secondItem="8vZ-Je-YJc" secondAttribute="leading" id="zds-L1-c86"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>

@@ -1,0 +1,44 @@
+PODS:
+  - KingBase (0.0.5)
+  - KingBaseCategory/NSDate+ (0.3.7)
+  - KingBaseCategory/NSFileManager+ (0.3.7):
+    - KingBaseCategory/NSDate+
+  - KingBaseCategory/NSObject+ (0.3.7)
+  - KingBaseCategory/UIApplication+ (0.3.7)
+  - KingBaseCategory/UIFont+ (0.3.7):
+    - KingBaseCategory/NSObject+
+  - KingBaseCategory/UIImage+ (0.3.7)
+  - Masonry (1.0.2)
+  - MHImagePicker (0.0.1):
+    - KingBaseCategory/NSDate+
+    - KingBaseCategory/NSFileManager+
+    - KingBaseCategory/UIApplication+
+    - MHPopupView/MHPopupView
+    - MHToolMall/MHAVFormatShop
+  - MHPopupView/MHPopupView (0.0.3):
+    - KingBaseCategory/UIFont+
+    - KingBaseCategory/UIImage+
+    - Masonry (~> 1.0.2)
+  - MHToolMall/MHAVFormatShop (0.0.1):
+    - KingBase (~> 0.0.5)
+    - KingBaseCategory/NSDate+
+    - KingBaseCategory/NSFileManager+
+
+DEPENDENCIES:
+  - MHImagePicker (from `../`)
+
+EXTERNAL SOURCES:
+  MHImagePicker:
+    :path: ../
+
+SPEC CHECKSUMS:
+  KingBase: d228101663cf91943fa2af0caf1f7ce31502aee9
+  KingBaseCategory: 0f9664966d3b83e0cd17c6feb1f8c606a608a291
+  Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
+  MHImagePicker: 0720c86efa8bfe071d924cf15be01461977da771
+  MHPopupView: 28af16c3db86fccc4939856ff3adb8cefa76006b
+  MHToolMall: 3cf8d8f2c3b4fc844beef3b8461510515abc084f
+
+PODFILE CHECKSUM: bc83f5155b74b2c02c5d9ab97cafde66b1306e3d
+
+COCOAPODS: 1.1.1

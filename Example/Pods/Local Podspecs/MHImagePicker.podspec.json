@@ -1,0 +1,39 @@
+{
+  "name": "MHImagePicker",
+  "version": "0.0.1",
+  "summary": "the MusicHome  imagepicker.",
+  "description": "the image imagepicker for the MusicHome",
+  "homepage": "https://github.com/hengyangKing/MHImagePicker",
+  "license": "MIT",
+  "authors": {
+    "hengyangKing": "hengyangKing.yeah.net"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source": {
+    "git": "https://github.com/hengyangKing/MHImagePicker.git",
+    "tag": "0.0.1"
+  },
+  "source_files": [
+    "Classes",
+    "Classes/**/*.{h,m}"
+  ],
+  "dependencies": {
+    "MHPopupView/MHPopupView": [
+
+    ],
+    "KingBaseCategory/NSDate+": [
+
+    ],
+    "MHToolMall/MHAVFormatShop": [
+
+    ],
+    "KingBaseCategory/NSFileManager+": [
+
+    ],
+    "KingBaseCategory/UIApplication+": [
+
+    ]
+  }
+}
