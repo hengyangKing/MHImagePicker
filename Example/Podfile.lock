@@ -1,5 +1,4 @@
 PODS:
-  - KingBase (0.0.5)
   - KingBaseCategory/NSDate+ (0.3.7)
   - KingBaseCategory/NSFileManager+ (0.3.7):
     - KingBaseCategory/NSDate+
@@ -9,7 +8,8 @@ PODS:
     - KingBaseCategory/NSObject+
   - KingBaseCategory/UIImage+ (0.3.7)
   - Masonry (1.0.2)
-  - MHImagePicker (0.0.1):
+  - MHBaseConst (0.0.5)
+  - MHImagePicker (0.0.2):
     - KingBaseCategory/NSDate+
     - KingBaseCategory/NSFileManager+
     - KingBaseCategory/UIApplication+
@@ -19,10 +19,10 @@ PODS:
     - KingBaseCategory/UIFont+
     - KingBaseCategory/UIImage+
     - Masonry (~> 1.0.2)
-  - MHToolMall/MHAVFormatShop (0.0.1):
-    - KingBase (~> 0.0.5)
+  - MHToolMall/MHAVFormatShop (0.0.3):
     - KingBaseCategory/NSDate+
     - KingBaseCategory/NSFileManager+
+    - MHBaseConst
 
 DEPENDENCIES:
   - MHImagePicker (from `../`)
@@ -32,13 +32,13 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  KingBase: d228101663cf91943fa2af0caf1f7ce31502aee9
   KingBaseCategory: 0f9664966d3b83e0cd17c6feb1f8c606a608a291
   Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
-  MHImagePicker: 0720c86efa8bfe071d924cf15be01461977da771
+  MHBaseConst: 3fcac0b58a2b3b3c81cf0380de3b0c6a775047e6
+  MHImagePicker: 112b8db69bfd4ed244a4ea8f16fc93b3cf3ffa9e
   MHPopupView: 28af16c3db86fccc4939856ff3adb8cefa76006b
-  MHToolMall: 3cf8d8f2c3b4fc844beef3b8461510515abc084f
+  MHToolMall: 59bfc87f299fbb20d8af4bbcaa2fde0f0dea6218
 
-PODFILE CHECKSUM: bc83f5155b74b2c02c5d9ab97cafde66b1306e3d
+PODFILE CHECKSUM: 6fb46b017a3e43c85a9de8e1c7c8106c0e99a959
 
-COCOAPODS: 1.1.1
+COCOAPODS: 1.4.0

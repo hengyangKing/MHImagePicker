@@ -10,7 +10,10 @@
 #endif
 #endif
 
+#import "MHBase.h"
+#import "MHConst.h"
+#import "MHSington.h"
 
-FOUNDATION_EXPORT double Pods_MHImagePickerDemoVersionNumber;
-FOUNDATION_EXPORT const unsigned char Pods_MHImagePickerDemoVersionString[];
+FOUNDATION_EXPORT double MHBaseConstVersionNumber;
+FOUNDATION_EXPORT const unsigned char MHBaseConstVersionString[];
 

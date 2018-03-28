@@ -1,6 +1,6 @@
 {
   "name": "MHImagePicker",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "summary": "the MusicHome  imagepicker.",
   "description": "the image imagepicker for the MusicHome",
   "homepage": "https://github.com/hengyangKing/MHImagePicker",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/hengyangKing/MHImagePicker.git",
-    "tag": "0.0.1"
+    "tag": "0.0.2"
   },
   "source_files": [
     "Classes",
