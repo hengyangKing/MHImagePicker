@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "MHImagePicker"
-  s.version      = "0.0.2"
+  s.version      = "0.0.3"
   s.summary      = "the MusicHome  imagepicker."
 
   
@@ -35,7 +35,7 @@ Pod::Spec.new do |s|
   s.source_files  = "Classes", "Classes/**/*.{h,m}"
   s.dependency "MHPopupView/MHPopupView"
   s.dependency "KingBaseCategory/NSDate+"
-  s.dependency "MHToolMall/MHAVFormatShop" ,("~>0.0.3")
+  s.dependency "MHToolMall/MHAVFormatShop"
   s.dependency "KingBaseCategory/NSFileManager+"
   s.dependency "KingBaseCategory/UIApplication+"
 
