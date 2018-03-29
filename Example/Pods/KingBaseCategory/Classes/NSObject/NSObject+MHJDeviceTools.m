@@ -16,16 +16,20 @@
 }
 -(MHJDeviceType)getDeviceModel
 {
+    CGSize currentSize = [[UIScreen mainScreen] currentMode].size;
+    
 
-    double h=[[UIScreen mainScreen] bounds].size.height;
-    if (h==480){
-        return iphone4and4s;
-    }else if (h==568){
-        return iphone5and5sandiphoneSE;
-    }else if (h==667){
-        return iphone6and6sand7;
+    if (CGSizeEqualToSize(CGSizeMake(1125, 2436), currentSize)) {
+        return iphoneX;
+    }else if (CGSizeEqualToSize(CGSizeMake(1242, 2208), currentSize)){
+        return iphonePlus;
+    }else if (CGSizeEqualToSize(CGSizeMake(750, 1334), currentSize)){
+        return iphoneNormel;
+    }else if (CGSizeEqualToSize(CGSizeMake(640, 1136), currentSize)){
+        return iphoneLesser;
+    }else{
+        return iphoneHoary;
     }
-    return iphone6plusandiphone6splusand7plus;
 }
 //得到ADID
 -(NSString *)ADID{

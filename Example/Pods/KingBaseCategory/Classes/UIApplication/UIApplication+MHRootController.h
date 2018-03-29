@@ -9,5 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface UIApplication (MHRootController)
--(UIViewController *)root;
+-(UIViewController * _Nullable)root;
+
+
+
 @end

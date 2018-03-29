@@ -11,7 +11,7 @@
 #import "MMPopupCategory.h"
 #import "MMPopupDefine.h"
 #import <Masonry/Masonry.h>
-
+#import "NSObject+MHJDeviceTools.h"
 @interface MMSheetView()
 
 @property (nonatomic, strong) UIView      *titleView;
@@ -133,9 +133,26 @@
         [self.cancelButton setTitle:config.defaultTextCancel forState:UIControlStateNormal];
         [self.cancelButton setTitleColor:config.itemNormalColor forState:UIControlStateNormal];
         
-        [self mas_updateConstraints:^(MASConstraintMaker *make) {
-            make.bottom.equalTo(self.cancelButton.mas_bottom);
-        }];
+        
+        if ([self getDeviceModel]!=iphoneX) {
+            [self mas_updateConstraints:^(MASConstraintMaker *make) {
+                make.bottom.equalTo(self.cancelButton.mas_bottom);
+            }];
+        }else{
+#pragma mark 适配iphonex
+            UIView *view = [UIView new];
+            [self addSubview:view];
+            [view setBackgroundColor:config.backgroundColor];
+            [view mas_updateConstraints:^(MASConstraintMaker *make) {
+                make.left.right.equalTo(self.cancelButton);
+                make.height.mas_equalTo(34);
+                make.top.equalTo(self.cancelButton.mas_bottom);
+            }];
+            [self mas_updateConstraints:^(MASConstraintMaker *make) {
+                make.bottom.equalTo(view.mas_bottom);
+            }];
+        }
+        
         [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(needDismissSelf) name:needDismiss object:nil];
         
         

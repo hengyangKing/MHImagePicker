@@ -10,10 +10,11 @@
 
 //机型枚举
 typedef NS_ENUM(NSInteger,MHJDeviceType){
-    iphone4and4s=0,
-    iphone5and5sandiphoneSE=1,
-    iphone6and6sand7=2,
-    iphone6plusandiphone6splusand7plus=3,
+    iphoneHoary=0, // iphone 4 4s
+    iphoneLesser=1,//iphone 5 5s se
+    iphoneNormel=2, //iphone 6 6s 7 8
+    iphonePlus=3, //iphone 6+ 6s+ 7+ 8+
+    iphoneX =4, //iphone X
 };
 
 //ios系统版本

@@ -43,12 +43,14 @@
 -(void (^)(CGFloat))MHPopProgressViewProgress
 {
     return ^(CGFloat progress){
-        self.config.MHPopProgressViewProgress(progress);
-        if(self.config.progress>=1.0){
-            [self disMiss];
-            return ;
-        }
-        [self.progressView setProgress:self.config.progress];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            self.config.MHPopProgressViewProgress(progress);
+            if(self.config.progress>=1.0){
+                [self disMiss];
+                return ;
+            }
+            [self.progressView setProgress:self.config.progress];
+        });
     };
 }
 -(void)setConfig:(MHPopProgressViewConfig *)config

@@ -9,19 +9,12 @@
 #import "UIFont+MHJFont.h"
 #import "NSObject+MHJDeviceTools.h"
 @implementation UIFont (MHJFont)
-
-
-
-+(CGFloat )getFontSizeWithStandardFontSize:(CGFloat )size
-{
++(CGFloat )getFontSizeWithStandardFontSize:(CGFloat )size{
     
     MHJDeviceType type=[self getDeviceModel];
-    
-    if (type==iphone4and4s||type==iphone5and5sandiphoneSE) {
-        
+    if (type==iphoneHoary||type==iphoneLesser) {
         return size-1.0;
-        
-    }else if (type==iphone6and6sand7){
+    }else if (type==iphoneNormel){
         return size;
     }else{
         return size+1.0;

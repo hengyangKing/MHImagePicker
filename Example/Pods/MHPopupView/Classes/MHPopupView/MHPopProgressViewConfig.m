@@ -42,9 +42,8 @@
 {
     _progressWidth=progressWidth;
 }
--(void)setProgress:(CGFloat)progress
-{
-    _progress=progress;
+-(void)setProgress:(CGFloat)progress {
+    _progress = progress;
 }
 -(MHPopProgressViewConfig *(^)(NSString *))MHPopProgressViewTitle
 {
@@ -71,7 +70,8 @@
 {
     return ^(CGFloat progress){
         self.progress=progress;
-        return self;};
+        return self;
+    };
 }
 -(MHPopProgressViewConfig *(^)(CGFloat))MHPopProgressViewProgressWidth
 {

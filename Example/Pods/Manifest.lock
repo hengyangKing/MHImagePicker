@@ -1,25 +1,25 @@
 PODS:
-  - KingBaseCategory/NSDate+ (0.3.7)
-  - KingBaseCategory/NSFileManager+ (0.3.7):
+  - KingBaseCategory/NSDate+ (0.4.2)
+  - KingBaseCategory/NSFileManager+ (0.4.2):
     - KingBaseCategory/NSDate+
-  - KingBaseCategory/NSObject+ (0.3.7)
-  - KingBaseCategory/UIApplication+ (0.3.7)
-  - KingBaseCategory/UIFont+ (0.3.7):
+  - KingBaseCategory/NSObject+ (0.4.2)
+  - KingBaseCategory/UIApplication+ (0.4.2)
+  - KingBaseCategory/UIFont+ (0.4.2):
     - KingBaseCategory/NSObject+
-  - KingBaseCategory/UIImage+ (0.3.7)
-  - Masonry (1.0.2)
+  - KingBaseCategory/UIImage+ (0.4.2)
+  - Masonry (1.1.0)
   - MHBaseConst (0.0.5)
   - MHImagePicker (0.0.2):
     - KingBaseCategory/NSDate+
     - KingBaseCategory/NSFileManager+
     - KingBaseCategory/UIApplication+
     - MHPopupView/MHPopupView
-    - MHToolMall/MHAVFormatShop
-  - MHPopupView/MHPopupView (0.0.3):
+    - MHToolMall/MHAVFormatShop (~> 0.0.3)
+  - MHPopupView/MHPopupView (0.0.6):
     - KingBaseCategory/UIFont+
     - KingBaseCategory/UIImage+
-    - Masonry (~> 1.0.2)
-  - MHToolMall/MHAVFormatShop (0.0.3):
+    - Masonry
+  - MHToolMall/MHAVFormatShop (0.0.4):
     - KingBaseCategory/NSDate+
     - KingBaseCategory/NSFileManager+
     - MHBaseConst
@@ -32,12 +32,12 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  KingBaseCategory: 0f9664966d3b83e0cd17c6feb1f8c606a608a291
-  Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
+  KingBaseCategory: f116f7169ab6fcae29f16bcaa08089f2e28dbd6a
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MHBaseConst: 3fcac0b58a2b3b3c81cf0380de3b0c6a775047e6
-  MHImagePicker: 112b8db69bfd4ed244a4ea8f16fc93b3cf3ffa9e
-  MHPopupView: 28af16c3db86fccc4939856ff3adb8cefa76006b
-  MHToolMall: 59bfc87f299fbb20d8af4bbcaa2fde0f0dea6218
+  MHImagePicker: 34300afd5beab37ed19f52f815d909e9669a1a21
+  MHPopupView: 4b78559feaa9f9c26447348ece48e1bc90f10a74
+  MHToolMall: d399c317835b4a9132b8fe9f1b28b476e7ce2895
 
 PODFILE CHECKSUM: 6fb46b017a3e43c85a9de8e1c7c8106c0e99a959
 

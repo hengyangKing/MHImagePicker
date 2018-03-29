@@ -38,5 +38,12 @@
     
 }
 
+-(NSString *)getIpodFilePath {
+    NSString *path=[self getMusicHomeCachePath];
+    NSString *filePath=[NSString stringWithFormat:@"%@/IpodCaches/",path];
+    [self hasLive:filePath];
+    return filePath;
+    
+}
 
 @end

@@ -25,14 +25,14 @@
 #import "MHBase.h"
 
 @interface TZVideoPlayerController () {
-    AVPlayer *_player;
     UIButton *_playButton;
-    UIImage *_cover;
     
     UIView *_toolBar;
     UIButton *_okButton;
     UIProgressView *_progress;
 }
+@property(nonatomic,strong)UIImage *cover;
+@property(nonatomic,strong)AVPlayer *player;
 
 @end
 
@@ -46,28 +46,30 @@
 }
 
 - (void)configMoviePlayer {
+    __weak typeof(self) weakself = self;
+    
     [[TZImageManager manager] getPhotoWithAsset:_model.asset completion:^(UIImage *photo, NSDictionary *info, BOOL isDegraded) {
-        _cover = photo;
+        weakself.cover = photo;
     }];
     [[TZImageManager manager] getVideoWithAsset:_model.asset completion:^(AVPlayerItem *playerItem, NSDictionary *info) {
         dispatch_async(dispatch_get_main_queue(), ^{
-            _player = [AVPlayer playerWithPlayerItem:playerItem];
-            AVPlayerLayer *playerLayer = [AVPlayerLayer playerLayerWithPlayer:_player];
-            playerLayer.frame = self.view.bounds;
-            [self.view.layer addSublayer:playerLayer];
-            [self addProgressObserver];
-            [self configPlayButton];
-            [self configBottomToolBar];
-            [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(pausePlayerAndShowNaviBar) name:AVPlayerItemDidPlayToEndTimeNotification object:_player.currentItem];
+            weakself.player = [AVPlayer playerWithPlayerItem:playerItem];
+            AVPlayerLayer *playerLayer = [AVPlayerLayer playerLayerWithPlayer:weakself.player];
+            playerLayer.frame = weakself.view.bounds;
+            [weakself.view.layer addSublayer:playerLayer];
+            [weakself addProgressObserver];
+            [weakself configPlayButton];
+            [weakself configBottomToolBar];
+            [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(pausePlayerAndShowNaviBar) name:AVPlayerItemDidPlayToEndTimeNotification object:weakself.player.currentItem];
         });
     }];
 }
 
 /// Show progress，do it next time / 给播放器添加进度更新,下次加上
 -(void)addProgressObserver{
-    AVPlayerItem *playerItem = _player.currentItem;
+    AVPlayerItem *playerItem = self.player.currentItem;
     UIProgressView *progress = _progress;
-    [_player addPeriodicTimeObserverForInterval:CMTimeMake(1.0, 1.0) queue:dispatch_get_main_queue() usingBlock:^(CMTime time) {
+    [self.player addPeriodicTimeObserverForInterval:CMTimeMake(1.0, 1.0) queue:dispatch_get_main_queue() usingBlock:^(CMTime time) {
         float current = CMTimeGetSeconds(time);
         float total = CMTimeGetSeconds([playerItem duration]);
         if (current) {
@@ -158,7 +160,7 @@
             options.version = PHVideoRequestOptionsVersionOriginal;
             options.deliveryMode = PHVideoRequestOptionsDeliveryModeAutomatic;
             options.networkAccessAllowed = YES;
-            
+            __weak typeof(self) weakself = self;
             [[PHImageManager defaultManager] requestAVAssetForVideo:jhyAsset options:options resultHandler:^(AVAsset* avasset, AVAudioMix* audioMix, NSDictionary* info){
                 
                 AVURLAsset* urlAsset = (AVURLAsset*)avasset;
@@ -170,8 +172,7 @@
                 
                 [[MHAVFormatShop shareFormatShop]exportAVURLAssetWithConfig:^(MHAVFormatShopConfig *config) {
                     
-                    config.MHAVFormatShopAsset(urlAsset);
-                    config.MHAVFormatShopOutputFileName(seleteFileName);
+                    config.MHAVFormatShopAsset(urlAsset).MHAVFormatShopOutputFilePath([[JHYFILEMANAGER getSmallMovieFilePath] stringByAppendingPathComponent:seleteFileName]);
                     
                 } andProgress:^(float progress) {
                     MHJLog(@"-------progress------%f",progress);
@@ -183,13 +184,13 @@
                     if ([JHYFILEMANAGER ReducedVideoIsIsOverflow:nil andFileName:seleteFileName]){
                         if (imagePickerVc.didFinishPickingVideoHandle) {
                             
-                            [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+                            [weakself.navigationController dismissViewControllerAnimated:YES completion:nil];
                             
-                            imagePickerVc.didFinishPickingVideoHandle(_cover, seleteFileName);
+                            imagePickerVc.didFinishPickingVideoHandle(weakself.cover, seleteFileName);
                         }
                     }else{
                         [imagePickerVc showAlertWithTitle:@"该文件过大，不能上传"];
-                        [self pausePlayerAndShowNaviBar];
+                        [weakself pausePlayerAndShowNaviBar];
                     }
                 } andFailed:^{
                     [[MHPopProgressView sharedInstance]disMiss];
